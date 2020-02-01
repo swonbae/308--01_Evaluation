@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+}
+
+.form-fields {
+  display: table;
+  margin: auto;
+}
+
+.form-field {
+  display: table-row;
+}
+
+.form-field-label,
+.form-field-control,
+.form-field-comment {
+  display: table-cell;
+  padding: 3px 10px;
+  text-align: right;
+}
+
+input,
+textarea {
+  width: 310px;
+}
+
+input[type="submit"] {
+  text-align: center;
+  margin-top: 2px;
+  background-color: dodgerblue;
+  color: white;
+  border: none;
+  height: 30px;
+}
+
+.btn {
+  margin-top: 24px;
+  width: 100px;
+  height: 30px;
+  border: none;
+  background-color: dodgerblue;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  padding: 9px 0 0 0;
+}
