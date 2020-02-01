@@ -1,34 +1,30 @@
 ﻿<!DOCTYPE html>
 <html>
-  <head>
-    <link href="/css/style.css" rel="stylesheet" type="text/css" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <!-- <img src="img/nodejs_logo.png" alt="Logo"> -->
-    <img src="img/CentennialCMYK.jpg" width="400px" alt="Logo" />
-    <h1>Login to evaluate the course:</h1>
 
-    <form method="post">
-      <div class="form-fields">
-        <div class="form-field">
-          <label class="form-field-label">Email:</label>
-          <input
-            type="text"
-            placeholder="Enter your email"
-            name="username"
-          /><br />
-        </div>
-        <div class="form-field">
-          <label class="form-field-label">Password:</label>
-          <input
-            type="password"
-            placeholder="Enter your password"
-            name="password"
-          /><br />
-          <input type="submit" value="Login" name="submit" />
-        </div>
+<head>
+  <link href="/css/style.css" rel="stylesheet" type="text/css" />
+  <title><%= title %></title>
+</head>
+
+<body>
+  <!-- <img src="img/nodejs_logo.png" alt="Logo"> -->
+  <img src="img/CentennialCMYK.jpg" width="400px" alt="Logo" />
+  <h1>Login to evaluate the course:</h1>
+
+  <form method="post">
+    <div class="form-fields">
+      <div class="form-field">
+        <label class="form-field-label">Email:</label>
+        <input type="text" name="username" placeholder="Enter your email" value="<%= username %>" /><br />
       </div>
-    </form>
-  </body>
+      <div class="form-field">
+        <label class="form-field-label">Password:</label>
+        <input type="password" placeholder="Enter your password" name="password" /><br />
+        <input type="submit" value="Login" name="submit" />
+      </div>
+    </div>
+    <span class="error"><%= error %></span>
+  </form>
+</body>
+
 </html>
