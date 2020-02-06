@@ -8,15 +8,19 @@ module.exports = function(app) {
   var index = require("../controllers/index.server.controller");
   var login = require("../controllers/login.server.controller");
   var logout = require("../controllers/logout.server.controller");
-  // var admin = require('../controllers/admin.server.controller');
-  //   var comments = require("../controllers/comments.server.controller");
-  //   var thankyou = require("../controllers/thankyou.server.controller");
+  var comments = require("../controllers/comments.server.controller");
+  var thankyou = require("../controllers/thankyou.server.controller");
   //handle the routing of get and post request
   app.get("/", index.render);
   app.get("/login", index.render);
   app.post("/login", login.render);
-  //   app.get("/comments", comments.render);
-  //   app.post("/comments", thankyou.render);
+  app.get("/comments", comments.render);
+  // app.post("/comments", thankyou.render);
+  app.post("/comments", function(req, res) {
+    // comments.render(req, res);
+    res.redirect('/thankyou');
+  });
+  app.get("/thankyou", thankyou.render);
   app.get("/logout", logout.render);
   //
   app.post("/", function(req, res) {

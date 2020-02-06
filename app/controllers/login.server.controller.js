@@ -7,6 +7,6 @@ exports.render = function(req, res) {
   //store the username in session object
   session.username = req.body.username;
   console.log("username in session: " + session.username);
-  // res.redirect('/admin');
+  res.redirect('/comments');
   //res.end('done');
 };

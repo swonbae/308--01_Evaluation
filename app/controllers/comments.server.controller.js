@@ -4,19 +4,29 @@
 exports.render = function(req, res) {
   //make a reference to the session object
   var session = req.session;
+  // let comment = req.body.comment;
+
   //check if username is stored in session object
   if (session.username) {
-    // res.write('<h1>Hello ' + session.username + '</h1><br>');
-    // res.end('<a href=' + '/logout' + '>Logout</a>');
-    // res.redirect('/');
 
-    //display the ejs page
-    res.render("comments", {
-      title: "Comments",
+    // if (comment) {
+    //   console.log("req.body.comment = '" + req.body.comment + "'");
+    //   res.redirect('/thankyou');
+    // } else {
+      //display the ejs page
+      res.render("comments", {
+        title: "Comments",
+        username: session.username
+      });
+    // }
+
+  } else {
+    res.render("nosession", {
+      title: "Login Needed",
       username: session.username
     });
-  } else {
-    res.write("<h1>Please login first.</h1>");
-    res.end("<a href=" + "/" + ">Login</a>");
+    // res.write("<h1>Please login first.</h1>");
+    // res.end("<a class="+"btn"+" href=" + "/" + ">Login</a>");
+    // // res.end("<a class='btn' href=" + "/" + ">Login</a>");
   }
 };
